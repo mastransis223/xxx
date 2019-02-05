@@ -69,7 +69,7 @@ A_GTO :  + if OP == 1, R0 != 0 : go to LABEL
 */
 
 
-typedef unsigned char Command_t;
+typedef uint8_t Command_t;
 typedef int64_t Register_t;
 
 typedef enum{
@@ -175,7 +175,7 @@ void executeCommand(Command_t cmd)
 
 
 
-Register_t runCode(uint8_t *code, size_t len)
+Register_t runCode(Command_t *code, size_t len)
 {
 	/* conpile */
 	compileCode(code, len);
